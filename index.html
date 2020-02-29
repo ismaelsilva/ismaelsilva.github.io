@@ -1,3 +1,187 @@
+
+<!doctype HTML>
 <html>
-    
+  <head>
+    <title>Ismael Ferreira da Silva</title>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="./json-viewer/jquery.json-viewer.js"></script>
+    <link href="./json-viewer/jquery.json-viewer.css" type="text/css" rel="stylesheet">
+
+    <style type="text/css">
+      body {
+        font-family: sans-serif;
+        background-color: #000000f5;
+      }
+      p{
+        color: chartreuse;
+        font-size: 1em;
+      }
+      p.options label {
+        margin-right: 10px;
+      }
+      p.options input[type=checkbox] {
+        vertical-align: middle;
+      }
+      pre#json-renderer {
+        border: 1px solid #aaa;
+      }
+
+      .json-document{
+        color: #e6cfcf;
+      }
+
+      .json-dict li{
+        color: chartreuse;
+        padding-top: 0.01em;
+        padding-bottom: 0.02em;
+      }
+
+      li span.json-string{
+        color: #e6cfcf;
+      }
+      li span.json-literal{
+        color: #7160ece8;
+      }
+
+      a.json-toggle:before {
+        font-size: 0.8em;
+        color: #c0c0c0;
+        width: 1em;
+        line-height: 1.6em;    
+      }
+
+      ul.json-dict, ol.json-array {  
+        border-left: 1px dotted #1a01cc73;
+        padding-left: 1.6em;
+      }
+    </style>
+
+    <script>
+      $(function() {
+        const object = {
+          "id": 01,
+          "name":"Ismael Ferreira da Silva",
+          "city": "Manaus",
+          "state": "Amazonas",
+          "phone": "+5592981718710",
+          "summary": "I started my career in 2011 as a systems trainee, and currently I’m developing web applications using .Net Framework, C#, Node.js, PHP, Javascript, HTML 5, CSS and others. I have worked in different types of projects such as Systems for Education, Industry, Sales, Personnel Administration. I have experience with other technologies and also a good team spirit.",
+          "education": [
+            
+          ],
+          "work_experiences": [
+            { 
+              "id": 7, 
+              "role": "Senior Developer",
+              "company" : "ELSYS",
+              "date_start": "2020-01-13",
+              "date_end": null,
+              "present":true
+            },
+            { 
+              "id": 6, 
+              "role": "Senior Developer",
+              "company" : "CITS - Centro Internacional de Tecnologia de Software do Amazonas",
+              "date_start": "2018-12-01",
+              "date_end": "2020-01-07",
+              "present":false,
+              "other_roles":{
+                "role":"Pleno Developer",
+                "date_start": "2017-07-24",
+                "date_end": "2019-11-30",
+              }
+            },
+            { 
+              "id": 5, 
+              "role": "Web Developer",
+              "company" : "Startup eMercado Ofertas",
+              "date_start": "2016-06-30",
+              "date_end": "2017-12-01",
+              "present":false
+            },
+            { 
+              "id": 4, 
+              "role": "Web Developer",
+              "company" : "SEAD - Secretaria de Estado de Administração e Gestão do Amazonas",
+              "date_start": "2016-04-24",
+              "date_end": "2017-07-24",
+              "present":false
+            },
+            { 
+              "id": 3, 
+              "role": "Web Developer",
+              "company" : "FUCAPI - Fundação Centro de Análise, Pesquisa e Inovação Tecnológica",
+              "date_start": "2014-09-08",
+              "date_end": "2016-01-16",
+              "present":false
+            },
+            { 
+              "id": 2, 
+              "role": "Junior Developer",
+              "company" : "FPF Tech - Fundação Desembargador Paulo Feitoza",
+              "date_start": "2012-09-08",
+              "date_end": "2014-09-07",
+              "present":false
+            },
+            { 
+              "id": 1, 
+              "role": "Junior Developer",
+              "company" : "Instituto de Tecnologia José Rocha Sergio Cardoso – Grupo CCE",
+              "date_start": "2011-04-01",
+              "date_end": "2012-07-30",
+              "present":false
+            }
+          ],
+          "skills": [
+            "C#",
+            "PHP",
+            "Java",
+            "Node.js",
+            "Javascript",
+            "jQuery",
+            "ASP.NET",
+            "HTML",
+            "CSS"
+          ],
+          "languages": [
+            "Portuguese"
+          ],
+        }
+
+        function renderJson() {
+          var options = {
+            collapsed: $('#collapsed').is(':checked'),
+            rootCollapsable: $('#root-collapsable').is(':checked'),
+            withQuotes: $('#with-quotes').is(':checked'),
+            withLinks: $('#with-links').is(':checked')
+          };
+
+          $('#json-renderer').jsonViewer(object, options);
+        }
+
+        $('p.options input[type=checkbox]').click(renderJson);
+
+        renderJson();
+      });
+    </script>
+  </head>
+  <body>
+    <div id="json-renderer"></div>
+    <p class="options">
+      Options:
+      <label title="Generate node as collapsed">
+        <input type="checkbox" id="collapsed">collapse nodes
+      </label>
+      <label title="Allow root element to be collasped">
+        <input type="checkbox" id="root-collapsable" checked>root collapsable
+      </label>
+      <label title="Surround keys with quotes">
+        <input type="checkbox" id="with-quotes">keys with quotes
+      </label>
+      <label title="Generate anchor tags for URL values">
+        <input type="checkbox" id="with-links">
+        with links
+      </label>
+    </p>
+  </body>
 </html>
