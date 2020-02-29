@@ -1,0 +1,50 @@
+body {
+  font-family: sans-serif;
+  background-color: #000000f5;
+}
+p{
+  color: chartreuse;
+  font-size: 1em;
+}
+.container-options{
+  width: 100%;
+  text-align: center;
+}
+p.options label {
+  margin-right: 10px;
+}
+p.options input[type=checkbox] {
+  vertical-align: middle;
+}
+pre#json-renderer {
+  border: 1px solid #aaa;
+}
+
+.json-document{
+  color: #e6cfcf;
+}
+
+.json-dict li{
+  color: chartreuse;
+  padding-top: 0.01em;
+  padding-bottom: 0.02em;
+}
+
+li span.json-string{
+  color: #e6cfcf;
+}
+li span.json-literal{
+  color: #7160ece8;
+}
+
+a.json-toggle:before {
+  font-size: 0.8em;
+  color: #c0c0c0;
+  width: 1em;
+  line-height: 1.6em;    
+}
+
+ul.json-dict, ol.json-array {  
+  border-left: 1px dotted #1a01cc73;
+  padding-left: 1.6em;
+}
