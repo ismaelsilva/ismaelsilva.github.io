@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Login | Missões Urbanas</title>
+  <link rel="icon" href="favicon.ico"><link href="style.css" rel="stylesheet"></head>
+  <body
+    x-data="{ page: 'loginMissoes', loaded: true, darkMode: false, stickyMenu: false, sidebarToggle: false, scrollTop: false }"
+    x-init="darkMode = JSON.parse(localStorage.getItem('darkMode')); $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
+    :class="{'dark bg-gray-900': darkMode === true}"
+  >
+    <div
+  x-show="loaded"
+  x-init="window.addEventListener('DOMContentLoaded', () => {setTimeout(() => loaded = false, 500)})"
+  class="fixed left-0 top-0 z-999999 flex h-screen w-screen items-center justify-center bg-white dark:bg-black"
+>
+  <div
+    class="h-16 w-16 animate-spin rounded-full border-4 border-solid border-brand-500 border-t-transparent"
+  ></div>
+</div>
+
+    <div class="relative p-6 bg-white z-1 dark:bg-gray-900 sm:p-0">
+      <div class="relative flex flex-col justify-center w-full h-screen dark:bg-gray-900 sm:p-0 lg:flex-row">
+        <div class="flex flex-col flex-1 w-full lg:w-1/2">
+          <div class="w-full max-w-md pt-10 mx-auto">
+            <a href="dashboard-missoes.html" class="inline-flex items-center text-theme-sm text-gray-500 transition-colors hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
+              <svg class="stroke-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M12.7083 5L7.5 10.2083L12.7083 15.4167" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Voltar ao dashboard
+            </a>
+          </div>
+          <div class="flex flex-col justify-center flex-1 w-full max-w-md mx-auto">
+            <div>
+              <div class="mb-5 sm:mb-8">
+                <div class="mb-4 inline-block rounded-lg bg-missoes-500 px-6 py-4 text-center font-bold text-black">
+                  <span class="block text-xl tracking-wide">MISSÕES</span>
+                  <span class="block text-sm mt-0.5 opacity-95">URBANAS</span>
+                </div>
+                <h1 class="mb-2 font-semibold text-gray-800 text-title-sm dark:text-white/90 sm:text-title-md">Entrar</h1>
+                <p class="text-theme-sm text-gray-500 dark:text-gray-400">Área administrativa – informe e-mail e senha.</p>
+              </div>
+              <div>
+                <form class="space-y-5">
+                  <div>
+                    <label class="mb-1.5 block text-theme-sm font-medium text-gray-700 dark:text-gray-400">E-mail<span class="text-error-500">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="seu@email.com" class="dark:bg-dark-900 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-theme-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30" />
+                  </div>
+                  <div>
+                    <label class="mb-1.5 block text-theme-sm font-medium text-gray-700 dark:text-gray-400">Senha<span class="text-error-500">*</span></label>
+                    <input type="password" placeholder="••••••••" class="dark:bg-dark-900 h-11 w-full rounded-lg border border-gray-300 bg-transparent py-2.5 pl-4 pr-11 text-theme-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30" />
+                  </div>
+                  <div>
+                    <button type="submit" class="flex w-full items-center justify-center rounded-lg bg-missoes-500 px-4 py-3 text-theme-sm font-medium text-black shadow-theme-xs hover:bg-missoes-600 hover:text-white">
+                      Entrar
+                    </button>
+                  </div>
+                </form>
+                <div class="mt-5">
+                  <p class="text-center text-theme-sm text-gray-700 dark:text-gray-400">
+                    <a href="#" class="text-missoes-500 hover:text-missoes-600 dark:text-missoes-500">Esqueci minha senha</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative items-center hidden w-full h-full bg-brand-950 dark:bg-white/5 lg:grid lg:w-1/2">
+          <div class="flex items-center justify-center z-1">
+            <div class="absolute right-0 top-0 -z-1 w-full max-w-[250px] xl:max-w-[450px]">
+  <img src="src/images/shape/grid-01.svg" alt="grid" />
+</div>
+<div
+  class="absolute bottom-0 left-0 -z-1 w-full max-w-[250px] rotate-180 xl:max-w-[450px]"
+>
+  <img src="src/images/shape/grid-01.svg" alt="grid" />
+</div>
+
+            <div class="flex flex-col items-center max-w-xs">
+              <div class="mb-4 rounded-lg bg-missoes-500 px-6 py-4 text-center font-bold text-black">
+                <span class="block text-xl tracking-wide">MISSÕES</span>
+                <span class="block text-sm mt-0.5 opacity-95">URBANAS</span>
+              </div>
+              <p class="text-center text-gray-400 dark:text-white/60">Ministério de Missões Urbanas – Sistema de gestão</p>
+            </div>
+          </div>
+        </div>
+        <div class="fixed z-50 hidden bottom-6 right-6 sm:block">
+          <button type="button" class="inline-flex items-center justify-center text-white transition-colors rounded-full size-14 bg-brand-500 hover:bg-brand-600" @click.prevent="darkMode = !darkMode">
+            <svg class="hidden fill-current dark:block" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.99998 1.5415C10.4142 1.5415 10.75 1.87729 10.75 2.2915V3.5415C10.75 3.95572 10.4142 4.2915 9.99998 4.2915C9.58577 4.2915 9.24998 3.95572 9.24998 3.5415V2.2915C9.24998 1.87729 9.58577 1.5415 9.99998 1.5415Z" fill=""/></svg>
+            <svg class="fill-current dark:hidden" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.4547 11.97L18.1799 12.1611C18.265 11.8383 18.1265 11.4982 17.8401 11.3266C17.5538 11.1551 17.1885 11.1934 16.944 11.4207L17.4547 11.97Z" fill="currentColor"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  <script defer src="bundle.js"></script></body>
+</html>
