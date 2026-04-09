@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Cadastro de Produtos | Rastreio Fábrica</title>
-  <link rel="icon" href="../tailwind-template/build/favicon.ico"><link href="../tailwind-template/build/style.css" rel="stylesheet"></head>
+  <link rel="icon" href="./tailwind-template/build/favicon.ico"><link href="./tailwind-template/build/style.css" rel="stylesheet"></head>
   <body
     x-data="{ page: 'materiais', loaded: true, darkMode: false, stickyMenu: false, sidebarToggle: false, scrollTop: false }"
     x-init="darkMode = JSON.parse(localStorage.getItem('darkMode')); $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
@@ -38,7 +38,7 @@
       <img
         class="logo-icon"
         :class="sidebarToggle ? 'lg:block' : 'hidden'"
-        src="../tailwind-template/build/src/images/logo/logo-icon.svg"
+        src="./tailwind-template/build/src/images/logo/logo-icon.svg"
         alt="Rastreio Fábrica"
       />
     </a>
@@ -255,10 +255,10 @@
       <!-- Hamburger Toggle BTN -->
 
       <a href="index.html" class="lg:hidden">
-        <img class="dark:hidden" src="../tailwind-template/build/src/images/logo/logo.svg" alt="Logo" />
+        <img class="dark:hidden" src="./tailwind-template/build/src/images/logo/logo.svg" alt="Logo" />
         <img
           class="hidden dark:block"
-          src="../tailwind-template/build/src/images/logo/logo-dark.svg"
+          src="./tailwind-template/build/src/images/logo/logo-dark.svg"
           alt="Logo"
         />
       </a>
@@ -448,7 +448,7 @@
                     class="relative z-1 block h-10 w-full max-w-10 rounded-full"
                   >
                     <img
-                      src="../tailwind-template/build/src/images/user/user-02.jpg"
+                      src="./tailwind-template/build/src/images/user/user-02.jpg"
                       alt="User"
                       class="overflow-hidden rounded-full"
                     />
@@ -490,7 +490,7 @@
                     class="relative z-1 block h-10 w-full max-w-10 rounded-full"
                   >
                     <img
-                      src="../tailwind-template/build/src/images/user/user-03.jpg"
+                      src="./tailwind-template/build/src/images/user/user-03.jpg"
                       alt="User"
                       class="overflow-hidden rounded-full"
                     />
@@ -532,7 +532,7 @@
                     class="relative z-1 block h-10 w-full max-w-10 rounded-full"
                   >
                     <img
-                      src="../tailwind-template/build/src/images/user/user-04.jpg"
+                      src="./tailwind-template/build/src/images/user/user-04.jpg"
                       alt="User"
                       class="overflow-hidden rounded-full"
                     />
@@ -574,7 +574,7 @@
                     class="relative z-1 block h-10 w-full max-w-10 rounded-full"
                   >
                     <img
-                      src="../tailwind-template/build/src/images/user/user-05.jpg"
+                      src="./tailwind-template/build/src/images/user/user-05.jpg"
                       alt="User"
                       class="overflow-hidden rounded-full"
                     />
@@ -616,7 +616,7 @@
                     class="relative z-1 block h-10 w-full max-w-10 rounded-full"
                   >
                     <img
-                      src="../tailwind-template/build/src/images/user/user-02.jpg"
+                      src="./tailwind-template/build/src/images/user/user-02.jpg"
                       alt="User"
                       class="overflow-hidden rounded-full"
                     />
@@ -658,7 +658,7 @@
                     class="relative z-1 block h-10 w-full max-w-10 rounded-full"
                   >
                     <img
-                      src="../tailwind-template/build/src/images/user/user-03.jpg"
+                      src="./tailwind-template/build/src/images/user/user-03.jpg"
                       alt="User"
                       class="overflow-hidden rounded-full"
                     />
@@ -700,7 +700,7 @@
                     class="relative z-1 block h-10 w-full max-w-10 rounded-full"
                   >
                     <img
-                      src="../tailwind-template/build/src/images/user/user-04.jpg"
+                      src="./tailwind-template/build/src/images/user/user-04.jpg"
                       alt="User"
                       class="overflow-hidden rounded-full"
                     />
@@ -742,7 +742,7 @@
                     class="relative z-1 block h-10 w-full max-w-10 rounded-full"
                   >
                     <img
-                      src="../tailwind-template/build/src/images/user/user-05.jpg"
+                      src="./tailwind-template/build/src/images/user/user-05.jpg"
                       alt="User"
                       class="overflow-hidden rounded-full"
                     />
@@ -800,7 +800,7 @@
           @click.prevent="dropdownOpen = ! dropdownOpen"
         >
           <span class="mr-3 h-11 w-11 overflow-hidden rounded-full">
-            <img src="../tailwind-template/build/src/images/user/owner.jpg" alt="User" />
+            <img src="./tailwind-template/build/src/images/user/owner.jpg" alt="User" />
           </span>
 
           <span class="text-theme-sm mr-1 block font-medium"> Hérico Araújo </span>
@@ -1001,5 +1001,5 @@
     </main>
       </div>
     </div>
-  <script defer src="../tailwind-template/build/bundle.js"></script></body>
+  <script defer src="./tailwind-template/build/bundle.js"></script></body>
 </html>
