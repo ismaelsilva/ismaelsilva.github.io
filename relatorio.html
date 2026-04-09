@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Início | Rastreio Fábrica</title>
+    <title>Relatório | Rastreio Fábrica</title>
   <link rel="icon" href="../tailwind-template/build/favicon.ico"><link href="../tailwind-template/build/style.css" rel="stylesheet"></head>
   <body
-    x-data="{ page: 'dashboardMissoes', loaded: true, darkMode: false, stickyMenu: false, sidebarToggle: false, scrollTop: false }"
+    x-data="{ page: 'comunicacao', loaded: true, darkMode: false, stickyMenu: false, sidebarToggle: false, scrollTop: false }"
     x-init="darkMode = JSON.parse(localStorage.getItem('darkMode')); $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
     :class="{'dark bg-gray-900': darkMode === true}"
   >
@@ -945,49 +945,146 @@
 </header>
 <main>
           <div class="p-4 mx-auto max-w-(--breakpoint-2xl) md:p-6">
-            <div class="rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-white/[0.03]">
-              <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-                <div>
-                  <h2 class="text-xl font-semibold text-gray-800 dark:text-white/90">Visão geral dos mockups</h2>
-                  <p class="mt-1 text-theme-sm text-gray-500 dark:text-gray-400">
-                    Conjunto de telas para apresentação comercial do sistema de rastreio de produção.
-                  </p>
-                </div>
-                <a href="login.html" class="inline-flex rounded-lg bg-brand-500 px-4 py-2.5 text-sm font-medium text-white hover:bg-brand-600">
-                  Abrir tela inicial
-                </a>
-              </div>
-            </div>
+            <div class="grid grid-cols-12 gap-4 md:gap-6">
+              <div class="col-span-12">
+                <div class="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
+                  <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+                    <div>
+                      <h3 class="text-lg font-semibold text-gray-800 dark:text-white/90">Relatório de produção e integração</h3>
+                      <p class="mt-1 text-theme-sm text-gray-500 dark:text-gray-400">
+                        Controle do status operacional e das integrações com Bling e Bitrix24 conforme a regra de negócio.
+                      </p>
+                    </div>
+                    <button type="button" class="rounded-lg bg-brand-500 px-4 py-2.5 text-sm font-medium text-white hover:bg-brand-600">
+                      Exportar relatório
+                    </button>
+                  </div>
 
-            <div class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
-              <a href="admin.html" class="rounded-2xl border border-gray-200 bg-white p-5 transition hover:border-brand-300 hover:shadow-theme-md dark:border-gray-800 dark:bg-white/[0.03]">
-                <h3 class="text-base font-semibold text-gray-800 dark:text-white/90">Painel administrativo</h3>
-                <p class="mt-2 text-theme-sm text-gray-500 dark:text-gray-400">Dashboard com produção, reprovações e integrações.</p>
-              </a>
-              <a href="operador.html" class="rounded-2xl border border-gray-200 bg-white p-5 transition hover:border-brand-300 hover:shadow-theme-md dark:border-gray-800 dark:bg-white/[0.03]">
-                <h3 class="text-base font-semibold text-gray-800 dark:text-white/90">Tela do operador</h3>
-                <p class="mt-2 text-theme-sm text-gray-500 dark:text-gray-400">Registro de produção com aprovado e reprovado.</p>
-              </a>
-              <a href="cadastro-usuario.html" class="rounded-2xl border border-gray-200 bg-white p-5 transition hover:border-brand-300 hover:shadow-theme-md dark:border-gray-800 dark:bg-white/[0.03]">
-                <h3 class="text-base font-semibold text-gray-800 dark:text-white/90">Cadastro de usuários</h3>
-                <p class="mt-2 text-theme-sm text-gray-500 dark:text-gray-400">Perfis de administrador e operador.</p>
-              </a>
-              <a href="cadastro-mesa.html" class="rounded-2xl border border-gray-200 bg-white p-5 transition hover:border-brand-300 hover:shadow-theme-md dark:border-gray-800 dark:bg-white/[0.03]">
-                <h3 class="text-base font-semibold text-gray-800 dark:text-white/90">Cadastro de mesas</h3>
-                <p class="mt-2 text-theme-sm text-gray-500 dark:text-gray-400">Linhas e posições de montagem.</p>
-              </a>
-              <a href="cadastro-produto.html" class="rounded-2xl border border-gray-200 bg-white p-5 transition hover:border-brand-300 hover:shadow-theme-md dark:border-gray-800 dark:bg-white/[0.03]">
-                <h3 class="text-base font-semibold text-gray-800 dark:text-white/90">Cadastro de produtos</h3>
-                <p class="mt-2 text-theme-sm text-gray-500 dark:text-gray-400">Base de itens integrada com o Bling.</p>
-              </a>
-              <a href="cadastro-defeito.html" class="rounded-2xl border border-gray-200 bg-white p-5 transition hover:border-brand-300 hover:shadow-theme-md dark:border-gray-800 dark:bg-white/[0.03]">
-                <h3 class="text-base font-semibold text-gray-800 dark:text-white/90">Cadastro de defeitos</h3>
-                <p class="mt-2 text-theme-sm text-gray-500 dark:text-gray-400">Padronização de motivos de reprovação.</p>
-              </a>
-              <a href="relatorio.html" class="rounded-2xl border border-gray-200 bg-white p-5 transition hover:border-brand-300 hover:shadow-theme-md dark:border-gray-800 dark:bg-white/[0.03]">
-                <h3 class="text-base font-semibold text-gray-800 dark:text-white/90">Relatório de integrações</h3>
-                <p class="mt-2 text-theme-sm text-gray-500 dark:text-gray-400">Status do envio para Bling e Bitrix24 conforme a regra do processo.</p>
-              </a>
+                  <div class="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-6">
+                    <div>
+                      <label class="mb-1.5 block text-theme-sm font-medium text-gray-700 dark:text-gray-400">Período inicial</label>
+                      <input type="text" value="01/10/2025" class="h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-theme-sm text-gray-800 shadow-theme-xs dark:border-gray-700 dark:bg-gray-900 dark:text-white/90" />
+                    </div>
+                    <div>
+                      <label class="mb-1.5 block text-theme-sm font-medium text-gray-700 dark:text-gray-400">Período final</label>
+                      <input type="text" value="06/10/2025" class="h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-theme-sm text-gray-800 shadow-theme-xs dark:border-gray-700 dark:bg-gray-900 dark:text-white/90" />
+                    </div>
+                    <div>
+                      <label class="mb-1.5 block text-theme-sm font-medium text-gray-700 dark:text-gray-400">Mesa</label>
+                      <select class="h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-theme-sm text-gray-800 shadow-theme-xs dark:border-gray-700 dark:bg-gray-900 dark:text-white/90">
+                        <option>Todas</option><option>Mesa 01</option><option>Mesa 02</option><option>Mesa 03</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label class="mb-1.5 block text-theme-sm font-medium text-gray-700 dark:text-gray-400">Status produção</label>
+                      <select class="h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-theme-sm text-gray-800 shadow-theme-xs dark:border-gray-700 dark:bg-gray-900 dark:text-white/90">
+                        <option>Todos</option><option>Aprovado</option><option>Reprovado</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label class="mb-1.5 block text-theme-sm font-medium text-gray-700 dark:text-gray-400">Integração</label>
+                      <select class="h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-theme-sm text-gray-800 shadow-theme-xs dark:border-gray-700 dark:bg-gray-900 dark:text-white/90">
+                        <option>Todos</option><option>Concluída</option><option>Pendente</option><option>Falha</option>
+                      </select>
+                    </div>
+                    <div class="flex items-end">
+                      <button type="button" class="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-white/5">
+                        Aplicar filtros
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-span-12">
+                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+                  <div class="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03]">
+                    <span class="text-sm text-gray-500 dark:text-gray-400">Registros no período</span>
+                    <h4 class="mt-2 text-title-sm font-bold text-gray-800 dark:text-white/90">486</h4>
+                  </div>
+                  <div class="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03]">
+                    <span class="text-sm text-gray-500 dark:text-gray-400">Bling concluído</span>
+                    <h4 class="mt-2 text-title-sm font-bold text-success-600">472</h4>
+                  </div>
+                  <div class="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03]">
+                    <span class="text-sm text-gray-500 dark:text-gray-400">Transferências Bling</span>
+                    <h4 class="mt-2 text-title-sm font-bold text-gray-800 dark:text-white/90">41</h4>
+                  </div>
+                  <div class="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03]">
+                    <span class="text-sm text-gray-500 dark:text-gray-400">Bitrix24 concluído</span>
+                    <h4 class="mt-2 text-title-sm font-bold text-brand-600">39</h4>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-span-12">
+                <div class="overflow-hidden rounded-2xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-white/[0.03]">
+                  <div class="px-6 pt-5">
+                    <h3 class="text-lg font-semibold text-gray-800 dark:text-white/90">Detalhamento dos registros</h3>
+                    <p class="mt-1 text-theme-sm text-gray-500 dark:text-gray-400">
+                      Regra aplicada: itens aprovados integram apenas o Bling; itens reprovados integram o Bling, geram transferência e seguem para o Bitrix24.
+                    </p>
+                  </div>
+                  <div class="overflow-x-auto pt-4">
+                    <table class="min-w-full">
+                      <thead>
+                        <tr class="border-y border-gray-100 dark:border-gray-800">
+                          <th class="py-3 pl-6 text-left font-medium text-gray-500 text-theme-xs dark:text-gray-400">Data/Hora</th>
+                          <th class="py-3 text-left font-medium text-gray-500 text-theme-xs dark:text-gray-400">Mesa</th>
+                          <th class="py-3 text-left font-medium text-gray-500 text-theme-xs dark:text-gray-400">Produto</th>
+                          <th class="py-3 text-left font-medium text-gray-500 text-theme-xs dark:text-gray-400">Produção</th>
+                          <th class="py-3 text-left font-medium text-gray-500 text-theme-xs dark:text-gray-400">Bling</th>
+                          <th class="py-3 text-left font-medium text-gray-500 text-theme-xs dark:text-gray-400">Transferência</th>
+                          <th class="py-3 text-left font-medium text-gray-500 text-theme-xs dark:text-gray-400">Bitrix24</th>
+                          <th class="py-3 pr-6 text-left font-medium text-gray-500 text-theme-xs dark:text-gray-400">Observação</th>
+                        </tr>
+                      </thead>
+                      <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
+                        <tr>
+                          <td class="py-4 pl-6 text-theme-sm text-gray-700 dark:text-gray-300">06/10/2025 13:35</td>
+                          <td class="py-4 text-theme-sm text-gray-600 dark:text-gray-400">Mesa 01</td>
+                          <td class="py-4 text-theme-sm text-gray-600 dark:text-gray-400">Kit LED 20W</td>
+                          <td class="py-4"><span class="rounded-full bg-success-50 px-2.5 py-0.5 text-xs font-medium text-success-600">Aprovado</span></td>
+                          <td class="py-4"><span class="rounded-full bg-success-50 px-2.5 py-0.5 text-xs font-medium text-success-600">Integrado</span></td>
+                          <td class="py-4"><span class="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300">Não aplicável</span></td>
+                          <td class="py-4"><span class="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300">Não aplicável</span></td>
+                          <td class="py-4 pr-6 text-theme-sm text-gray-600 dark:text-gray-400">Fluxo concluído conforme regra de item aprovado.</td>
+                        </tr>
+                        <tr>
+                          <td class="py-4 pl-6 text-theme-sm text-gray-700 dark:text-gray-300">06/10/2025 13:28</td>
+                          <td class="py-4 text-theme-sm text-gray-600 dark:text-gray-400">Mesa 03</td>
+                          <td class="py-4 text-theme-sm text-gray-600 dark:text-gray-400">Painel Slim 48W</td>
+                          <td class="py-4"><span class="rounded-full bg-error-50 px-2.5 py-0.5 text-xs font-medium text-error-600">Reprovado</span></td>
+                          <td class="py-4"><span class="rounded-full bg-success-50 px-2.5 py-0.5 text-xs font-medium text-success-600">Integrado</span></td>
+                          <td class="py-4"><span class="rounded-full bg-success-50 px-2.5 py-0.5 text-xs font-medium text-success-600">Transferido</span></td>
+                          <td class="py-4"><span class="rounded-full bg-success-50 px-2.5 py-0.5 text-xs font-medium text-success-600">Integrado</span></td>
+                          <td class="py-4 pr-6 text-theme-sm text-gray-600 dark:text-gray-400">Reprovação enviada ao Bling e registrada no Bitrix24.</td>
+                        </tr>
+                        <tr>
+                          <td class="py-4 pl-6 text-theme-sm text-gray-700 dark:text-gray-300">06/10/2025 12:54</td>
+                          <td class="py-4 text-theme-sm text-gray-600 dark:text-gray-400">Mesa 02</td>
+                          <td class="py-4 text-theme-sm text-gray-600 dark:text-gray-400">Driver 48V</td>
+                          <td class="py-4"><span class="rounded-full bg-error-50 px-2.5 py-0.5 text-xs font-medium text-error-600">Reprovado</span></td>
+                          <td class="py-4"><span class="rounded-full bg-warning-50 px-2.5 py-0.5 text-xs font-medium text-warning-600">Pendente</span></td>
+                          <td class="py-4"><span class="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300">Aguardando Bling</span></td>
+                          <td class="py-4"><span class="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300">Aguardando regra</span></td>
+                          <td class="py-4 pr-6 text-theme-sm text-gray-600 dark:text-gray-400">Bitrix24 só deve ser acionado após a transferência no Bling.</td>
+                        </tr>
+                        <tr>
+                          <td class="py-4 pl-6 text-theme-sm text-gray-700 dark:text-gray-300">06/10/2025 12:31</td>
+                          <td class="py-4 text-theme-sm text-gray-600 dark:text-gray-400">Mesa 04</td>
+                          <td class="py-4 text-theme-sm text-gray-600 dark:text-gray-400">Driver Smart 60W</td>
+                          <td class="py-4"><span class="rounded-full bg-error-50 px-2.5 py-0.5 text-xs font-medium text-error-600">Reprovado</span></td>
+                          <td class="py-4"><span class="rounded-full bg-success-50 px-2.5 py-0.5 text-xs font-medium text-success-600">Integrado</span></td>
+                          <td class="py-4"><span class="rounded-full bg-error-50 px-2.5 py-0.5 text-xs font-medium text-error-600">Falha</span></td>
+                          <td class="py-4"><span class="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300">Não iniciado</span></td>
+                          <td class="py-4 pr-6 text-theme-sm text-gray-600 dark:text-gray-400">Sem transferência concluída, não deve registrar no Bitrix24.</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
     </main>
